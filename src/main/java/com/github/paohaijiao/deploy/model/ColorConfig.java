@@ -105,11 +105,31 @@ public class ColorConfig {
      */
     private Color descTextColor = new Color(240, 240, 240);
 
+
+    private Color requestLineColor = new Color(0, 100, 200);
+
+    private Color responseLineColor = new Color(0, 150, 0);
+
+    private Color lifelineColor = new Color(180, 180, 180);
+
+    private Color titleColor = new Color(50, 50, 100);
+
+    private Color participantColor = new Color(50, 50, 150);
+
+    private Color requestTextColor = new Color(0, 0, 120);
+
+    private Color responseTextColor = new Color(0, 120, 0);
+
+    private Color requestDataColor = new Color(0, 0, 100);
+
+    private Color responseDataColor = new Color(0, 100, 0);
+
+    private Color timestampColor = new Color(100, 100, 100);
+
+    private Color lifelineDotColor = new Color(100, 100, 100);
+
+
     public Color getBorderColorFor(Color baseColor) {
-        return new Color(
-                Math.max(baseColor.getRed() - 40, 0),
-                Math.max(baseColor.getGreen() - 40, 0),
-                Math.max(baseColor.getBlue() - 40, 0)
-        );
+        return new Color(Math.max(baseColor.getRed() - 40, 0), Math.max(baseColor.getGreen() - 40, 0), Math.max(baseColor.getBlue() - 40, 0));
     }
 }

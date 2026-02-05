@@ -90,6 +90,21 @@ public class LayoutConfig {
     private int topMargin = 70;
 
 
+    private int participantWidth = 130;
+    private int participantStartX = 80;
+    private int participantTitleY = 80;
+    private int lifelineStartY = 90;
+    private int messageStartY = 120;
+    private int verticalSpacing = 70;
+    private float messageLineWidth = 1.5f;
+    private int bottomMargin = 80;
+    private int legendWidth = 200;
+    private int legendHeight = 120;
+    private int legendX = 900;
+    private int legendY = 150;
+    private int arrowSize = 8;
+
+
     public int getServiceBoxSpacing() {
         return serviceBoxWidth + serviceBoxGap;
     }
