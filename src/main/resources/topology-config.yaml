@@ -1,0 +1,272 @@
+# src/main/resources/topology-config.yaml
+title: "企业网络拓扑图"
+canvas:
+  width: 1200
+  height: 800
+  backgroundColor: "#FFFFFF"
+
+styles:
+  fontFamily: "Arial"
+  titleFontSize: 24
+  labelFontSize: 12
+  legendFontSize: 12
+  titleColor: "#000000"
+  labelColor: "#333333"
+
+legend:
+  enabled: true
+  position:
+    x: 50
+    y: 650
+  backgroundColor: "#F5F5F5"
+  borderColor: "#CCCCCC"
+
+nodes:
+  - id: "core-router"
+    type: "router"
+    label: "核心路由器"
+    position:
+      x: 600
+      y: 100
+    color: "#FF0000"
+    size: 48
+
+  - id: "firewall"
+    type: "firewall"
+    label: "防火墙"
+    position:
+      x: 600
+      y: 250
+    color: "#FFA500"
+    size: 48
+
+  - id: "core-switch"
+    type: "switch"
+    label: "核心交换机"
+    position:
+      x: 600
+      y: 400
+    color: "#0000FF"
+    size: 48
+
+  - id: "access-switch-1"
+    type: "switch"
+    label: "接入交换机-1"
+    position:
+      x: 300
+      y: 550
+    color: "#0000FF"
+    size: 48
+
+  - id: "access-switch-2"
+    type: "switch"
+    label: "接入交换机-2"
+    position:
+      x: 600
+      y: 550
+    color: "#0000FF"
+    size: 48
+
+  - id: "access-switch-3"
+    type: "switch"
+    label: "接入交换机-3"
+    position:
+      x: 900
+      y: 550
+    color: "#0000FF"
+    size: 48
+
+  - id: "web-server"
+    type: "server"
+    label: "Web服务器"
+    position:
+      x: 400
+      y: 100
+    color: "#008000"
+    size: 48
+
+  - id: "db-server"
+    type: "database"
+    label: "数据库服务器"
+    position:
+      x: 600
+      y: 100
+    color: "#8B008B"
+    size: 48
+
+  - id: "app-server"
+    type: "server"
+    label: "应用服务器"
+    position:
+      x: 800
+      y: 100
+    color: "#008000"
+    size: 48
+
+  - id: "pc-1"
+    type: "pc"
+    label: "PC-1"
+    position:
+      x: 200
+      y: 700
+    color: "#00FFFF"
+    size: 48
+
+  - id: "pc-2"
+    type: "pc"
+    label: "PC-2"
+    position:
+      x: 400
+      y: 700
+    color: "#00FFFF"
+    size: 48
+
+  - id: "pc-3"
+    type: "pc"
+    label: "PC-3"
+    position:
+      x: 600
+      y: 700
+    color: "#00FFFF"
+    size: 48
+
+  - id: "pc-4"
+    type: "pc"
+    label: "PC-4"
+    position:
+      x: 800
+      y: 700
+    color: "#00FFFF"
+    size: 48
+
+  - id: "pc-5"
+    type: "pc"
+    label: "PC-5"
+    position:
+      x: 1000
+      y: 700
+    color: "#00FFFF"
+    size: 48
+
+  - id: "ap-1"
+    type: "wifi"
+    label: "无线AP"
+    position:
+      x: 900
+      y: 250
+    color: "#FF00FF"
+    size: 48
+
+  - id: "internet"
+    type: "cloud"
+    label: "互联网"
+    position:
+      x: 600
+      y: 50
+    color: "#808080"
+    size: 48
+
+connections:
+  - from: "internet"
+    to: "core-router"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "core-router"
+    to: "firewall"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "firewall"
+    to: "core-switch"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "core-switch"
+    to: "access-switch-1"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "core-switch"
+    to: "access-switch-2"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "core-switch"
+    to: "access-switch-3"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "access-switch-1"
+    to: "pc-1"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "access-switch-1"
+    to: "pc-2"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "access-switch-2"
+    to: "pc-3"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "access-switch-3"
+    to: "pc-4"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "access-switch-3"
+    to: "pc-5"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "web-server"
+    to: "core-router"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "db-server"
+    to: "core-router"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "app-server"
+    to: "core-router"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "ap-1"
+    to: "core-switch"
+    style: "solid"
+    color: "#000000"
+    width: 2
+
+  - from: "ap-1"
+    to: "pc-4"
+    style: "dashed"
+    color: "#FF0000"
+    width: 2
+    label: "WiFi"
+
+  - from: "ap-1"
+    to: "pc-5"
+    style: "dashed"
+    color: "#FF0000"
+    width: 2
+    label: "WiFi"
